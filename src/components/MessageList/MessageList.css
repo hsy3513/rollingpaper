@@ -1,0 +1,116 @@
+.message-list {
+    animation: listFadeIn 0.6s ease-out 0.3s both;
+}
+
+.message-list__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 20px;
+}
+
+.message-list__count {
+    color: #a78bfa;
+    font-weight: 700;
+}
+
+.message-list__empty {
+    text-align: center;
+    padding: 48px 24px;
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.message-list__empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.message-list__empty p {
+    margin: 0;
+}
+
+/* Grid Layout */
+.message-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+/* Message Card */
+.message-card {
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: cardPopIn 0.4s ease-out both;
+    cursor: default;
+}
+
+.message-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.message-card__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.message-card__icon {
+    width: 18px;
+    height: 18px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.message-card__author {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.message-card__content {
+    font-size: 0.92rem;
+    color: #333;
+    line-height: 1.65;
+    margin: 0;
+    word-break: keep-all;
+    flex: 1;
+}
+
+.message-card__date {
+    font-size: 0.78rem;
+    color: #888;
+    text-align: right;
+    margin-top: auto;
+}
+
+@keyframes listFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

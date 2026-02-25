@@ -1,0 +1,125 @@
+.message-form {
+    background: #ffffff;
+    border: 1px solid #e8e8ee;
+    border-radius: 20px;
+    padding: 32px 36px;
+    animation: formSlideIn 0.6s ease-out 0.15s both;
+}
+
+.message-form__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 24px;
+}
+
+.message-form__field {
+    margin-bottom: 20px;
+}
+
+.message-form__label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.message-form__input,
+.message-form__textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #1a1a2e;
+    background: #f8f8fc;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.message-form__input::placeholder,
+.message-form__textarea::placeholder {
+    color: #aaa;
+}
+
+.message-form__input:focus,
+.message-form__textarea:focus {
+    border-color: #a78bfa;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+.message-form__textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.message-form__submit {
+    width: 100%;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2b55 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-form__submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    transition: left 0.5s ease;
+}
+
+.message-form__submit:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.message-form__submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 26, 46, 0.3);
+}
+
+.message-form__submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.message-form__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.message-form__submit-icon {
+    width: 18px;
+    height: 18px;
+}
+
+@keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
